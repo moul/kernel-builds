@@ -1,0 +1,22 @@
+env:
+- _VERSION=4.0.4
+- _FLAVOUR=std
+- _BRANCH=stable
+- _ARCH=armhf
+
+##########################################
+
+# Maybe we can remove this later
+sudo: true
+
+
+# FIXME: check for a better environment
+language: c
+
+
+install:
+- make travis_prepare
+
+
+script:
+- make travis_run VERSION=${_VERSION} FLAVOUR=${_FLAVOUR} BRANCH=${_STABLE} ARCH=${_ARCH}
